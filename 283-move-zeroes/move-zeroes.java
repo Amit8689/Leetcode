@@ -1,22 +1,46 @@
-// here is optimal solution using 2 pointer approach
 class Solution {
     public void moveZeroes(int[] nums) {
-        int slow=0,fast=0;
-        while(fast<nums.length){
-            if(nums[fast] != 0){
-                nums[slow]=nums[fast];
-                slow++;
-                fast++;
+        int i=0,j=0;
+        while(j<nums.length){
+            if(nums[j]==0){
+                j++;
             }else{
-                fast++; 
+                int temp=nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+                j++;
+                i++;
             }
-        }
-        while(slow<nums.length){
-            nums[slow]=0;
-            slow++;
         }
     }
 }
+
+
+
+
+
+
+
+
+// here is optimal solution using 2 pointer approach
+// class Solution {
+//     public void moveZeroes(int[] nums) {
+//         int slow=0,fast=0;
+//         while(fast<nums.length){
+//             if(nums[fast] != 0){
+//                 nums[slow]=nums[fast];
+//                 slow++;
+//                 fast++;
+//             }else{
+//                 fast++; 
+//             }
+//         }
+//         while(slow<nums.length){
+//             nums[slow]=0;
+//             slow++;
+//         }
+//     }
+// }
 
 // class Solution {
 //     public void moveZeroes(int[] nums) {
